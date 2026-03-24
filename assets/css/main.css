@@ -2541,7 +2541,7 @@ input, select, textarea {
 			height: 100%;
 			left: 0;
 			position: absolute;
-			top: 0;
+			top: -2em;
 			width: 100%;
 		}
 
@@ -2975,7 +2975,7 @@ input, select, textarea {
 
 			.gallery a img {
 				display: block;
-				height: 25vw;
+				height: 100%; /*25vw;*/
 				min-height: 18rem;
 				object-fit: cover;
 				object-position: center;
@@ -3356,7 +3356,7 @@ input, select, textarea {
 
 			#wrapper > section > header h1 {
 			color: white;
-				margin-top: -2rem;
+				/*margin-top: -2rem;*/
 			}
 
 				#wrapper > section > header h1:before {
@@ -3601,7 +3601,7 @@ input, select, textarea {
 					#wrapper section > .content {
 						padding: 0;
 						width: 100%;
-						overflow-x: hidden;
+						/*overflow-x: hidden;*/
 					}
 
 					#wrapper section > footer {
@@ -3912,3 +3912,12 @@ input, select, textarea {
 		}
 
 	}
+
+	@media screen and (max-width: 1152px) {
+		#logoimg{
+		margin:auto !important;
+		}
+
+	}
+
+
