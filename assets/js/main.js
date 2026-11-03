@@ -247,9 +247,13 @@ window.addEventListener("load", function(){
 	let rTopInsta = document.getElementById("returnTopInsta");
 	rTopInsta.addEventListener("click", gotoInsta);
 	rTopInsta.children[0].addEventListener("touchstart", gotoInsta);
-
+	let lastLink = Date.now();
 	function gotoInsta(){
-		window.location.href = 'https://instagram.com/the.solareffect';
+		if(lastLink+1000 < Date.now()){
+
+			window.location.href = 'https://instagram.com/the.solareffect';
+			lastLink = Date.now();
+		}
 	}
 
 	function showTopButton() {
