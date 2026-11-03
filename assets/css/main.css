@@ -3944,7 +3944,7 @@ body.is-ie #wrapper > section > .content > section {
 	border-radius: 50%;
 	position: fixed;
 	bottom: 2em;
-	left: 19em;
+	left: 11em;
 	display: none;
 	color: white;
 
@@ -3954,7 +3954,7 @@ body.is-ie #wrapper > section > .content > section {
 }
 
 #returnTopInsta{
-	left: 24em;
+	left: 16em;
 }
 
 #returnTopInsta>svg{
@@ -3982,6 +3982,7 @@ color: wheat;
 
 @media screen and (max-width: 1152px) {
 	#mantra{
+	margin-top: 8em;
 		opacity: .6;
 		right: 0.5em;
 	}
