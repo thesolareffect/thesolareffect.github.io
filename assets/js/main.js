@@ -205,4 +205,67 @@
 
 					});
 
+
+
 })(jQuery);
+
+window.addEventListener("load", function(){
+	function scrollToTop( ) {
+		let doc = document.documentElement;
+		if( doc ){
+			let header = document.getElementsByTagName('header')[0];
+			if(header.getBoundingClientRect().top <= doc.scrollTop){
+				// Asynchronous smooth scroll to top
+				// - synchronous scrolls can be interrupted by DOM changes
+				const mutObserve = new MutationObserver(() => {
+					mutObserve.disconnect();
+					if(header.getBoundingClientRect().top <= doc.scrollTop){
+						smoothScrollTo( doc );
+					}
+				});
+				mutObserve.observe(document.body, { childList: true, subtree: true  });
+				smoothScrollTo( doc );
+			}
+		}
+	}
+
+	function smoothScrollTo( toElement ){
+		const top = toElement.getBoundingClientRect();
+
+		window.scrollTo({
+			top: window.scrollY + top,
+			behavior: 'smooth',
+		});
+	}
+
+
+	let rTop = document.getElementById("returnTop");
+	rTop.addEventListener("click", scrollToTop);
+	rTop.children[0].addEventListener("click", scrollToTop);
+	rTop.children[0].addEventListener("touchstart", scrollToTop);
+
+	let rTopInsta = document.getElementById("returnTopInsta");
+	rTopInsta.addEventListener("click", gotoInsta);
+	rTopInsta.children[0].addEventListener("touchstart", gotoInsta);
+
+	function gotoInsta(){
+		window.location.href = 'https://instagram.com/the.solareffect';
+	}
+
+	function showTopButton() {
+		let offsetNav = 10;
+		let btnScrollTop = document.getElementById("returnTop");
+		let bodyScroll = document.body.scrollTop;
+		let enable = document.body.scrollTop > offsetNav || document.documentElement.scrollTop > offsetNav;
+
+		btnScrollTop.style.display = enable ? "flex" : "none";
+		document.getElementById("returnTopInsta").style.display = enable ? "flex" : "none";
+	}
+
+	window.onscroll = showTopButton;
+});
+
+
+
+
+
