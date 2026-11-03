@@ -3972,7 +3972,7 @@ body.is-ie #wrapper > section > .content > section {
 position:absolute;
 top:0;
 writing-mode:vertical-rl;
-font-size:42px;
+font-size:1em;
 font-weight:900;
 letter-spacing:4px;
 white-space:nowrap;
@@ -3982,9 +3982,7 @@ color: wheat;
 
 @media screen and (max-width: 1152px) {
 	#mantra{
-	margin-top: 8em;
-		opacity: .6;
-		right: 0.5em;
+		right: 0em;
 	}
 
 }
