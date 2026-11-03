@@ -3978,12 +3978,47 @@ letter-spacing:4px;
 white-space:nowrap;
 margin-top: 1em;
 color: wheat;
+z-index: 1001;
 }
 
 @media screen and (max-width: 1152px) {
 	#mantra{
 		right: 0em;
 	}
-
+	.navbar {
+		display: none !important;
+	}
 }
 
+/* Navbar */
+.navbar {
+	position: fixed;
+	top: -4em; /* Hidden above viewport */
+	left: 0;
+	width: 100%;
+	height: 4em;
+	background: #28103e;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 2rem;
+	transition: top 0.3s ease;
+	z-index: 1000;
+	opacity: 0.8;
+}
+
+.navbar.show {
+	top: 0;
+}
+
+.nav-links {
+	display: flex;
+	gap: 1.5rem;
+	margin: auto;
+}
+
+.nav-links a {
+	color: white;
+	text-decoration: none;
+}

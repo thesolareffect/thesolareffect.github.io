@@ -26,10 +26,8 @@
 	}
 
 	.smallforhead{
-margin-top:2em !important;
+		margin-top:2em !important;
 	}
-
-
 
 	#logoimgtxt{
 		text-align: right;
@@ -41,6 +39,35 @@ margin-top:2em !important;
 	</style>
 
 	<body class="is-preload">
+
+	<nav class="navbar" id="navbar">
+    <div class="nav-links">
+        <a href="#Photography">Photography</a>•
+        <a href="#videoproduction">Video Production</a>•
+        <a href="#Interns">TheSolarEffect.Interns</a>•
+        <a href="#marketing">Contact</a>
+    </div>
+</nav>
+
+
+<script>
+
+	window.addEventListener("load", function(){
+
+		 const navbar = document.getElementById('navbar');
+    const threshold = document.getElementById("socialSection").scrollHeight *2;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > threshold) {
+            navbar.classList.add('show');
+        } else {
+            navbar.classList.remove('show');
+        }
+    });
+
+	});
+
+</script>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -400,10 +427,17 @@ margin-top:2em !important;
 
 <script>
 const slogan = "DON'T HATE, CREATE! • ";
-const repeats = Math.ceil(document.body.scrollHeight /250);
+window.addEventListener("load", function(){
 
-document.getElementById("mantra").textContent =
-  slogan.repeat(repeats);
+					let repeats = 1;
+					for( ; document.getElementById("mantra").offsetHeight < document.body.scrollHeight ; ){
+
+						repeats+=1;
+						document.getElementById("mantra").textContent = slogan.repeat(repeats);
+					}
+									});
+
+
 </script>
 
 		<span class="returnTop" id="returnTop">
