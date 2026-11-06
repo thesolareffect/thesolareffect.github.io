@@ -40,14 +40,53 @@
 
 	<body class="is-preload">
 
-	<nav class="navbar" id="navbar">
-    <div class="nav-links">
-        <a href="#Photography">Photography</a>•
-        <a href="#videoproduction">Video Production</a>•
-        <a href="#Interns">TheSolarEffect.Interns</a>•
+
+<nav class="nav" id="navMobile">
+
+    <div class="nav-header" id="toggle">
+        <div class="menu-icon">☰</div>
+    </div>
+
+    <div class="nav-links-Mobile">
+        <a href="#Photography">Photography</a>
+        <a href="#videoproduction">Video Production</a>
+        <a href="#Interns">TheSolarEffect.Interns</a>
         <a href="#marketing">Contact</a>
     </div>
+
 </nav>
+
+
+<script>
+const nav = document.getElementById("navMobile");
+const toggle = document.getElementById("toggle");
+const icon = document.querySelector(".menu-icon");
+
+toggle.addEventListener("click", () => {
+
+    nav.classList.toggle("open");
+
+    icon.textContent =
+        nav.classList.contains("open")
+        ? "✕"
+        : "☰";
+
+});
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 600) {
+        nav.classList.add("visible");
+    } else {
+
+        nav.classList.remove("visible");
+        nav.classList.remove("open");
+
+        icon.textContent = "☰";
+    }
+
+});
+</script>
 
 
 <script>
@@ -339,15 +378,45 @@
 
 					</section>
 
-					<section>
-						<header>
+				<section class="smallforhead">
+					<header>
+
 							<h2 id="Interns">TheSolarEffect.Interns</h2>
 						</header>
 						<div class="content">
-							<ul class="feature-icons">
-							<li class="icon solid fa-instagram"><a target="_blank" href="https://instagram.com/thesolareffect.interns" >Instagram / TheSolarEffect.Interns</a></li>
+
+
+						<!-- Section -->
+								<section>
+
+									<div class="content">
+										<div class="gallery">
+											<a href="images/interns/originals/20261011_163649.jpg" class="landscape"><img loading="lazy" src="images/interns/resize/re_20261011_163649.jpg" alt="" /></a>
+											<a href="images/interns/originals/05_09_2026_SCRATCHWERK-58.jpg"><img loading="lazy" src="images/interns/resize/re_05_09_2026_SCRATCHWERK-58.jpg" alt="" /></a>
+											<a href="images/interns/originals/20260811_171847.jpg"><img loading="lazy" src="images/interns/resize/re_20260811_171847.jpg" alt="" /></a>
+											<a href="images/interns/originals/DSC00976.jpg" class="landscape"><img loading="lazy" src="images/interns/resize/re_DSC00976.jpg" alt="" /></a>
+											<a href="images/interns/originals/13_09_2026_NIET_NU_PERRELLEX_PRODUCTIONS_FOTO_TSE_NOURI-25.jpg"><img loading="lazy" src="images/interns/resize/re_13_09_2026_NIET_NU_PERRELLEX_PRODUCTIONS_FOTO_TSE_NOURI-25.jpg" alt="" /></a>
+											<a href="images/interns/originals/MUHAMMED_APTY.jpg"><img loading="lazy" src="images/interns/resize/re_MUHAMMED_APTY.jpg" alt="" /></a>
+											<sub><strong>© TheSolarEffect.Interns</strong><br>
+
+											<sub><strong>Shems M. / © The Solar Effect</strong><br>
+										</div>
+									</div>
+								</section>
+
+								<section id="socialSection">
+									<header>
+									</header>
+									<div class="content" >
+
+									<ul class="feature-icons">
+											<li class="icon solid fa-instagram"><a target="_blank" href="https://instagram.com/thesolareffect.interns" >Instagram / TheSolarEffect.Interns</a></li>
 							<li class="icon solid fa-brands fa-email"><a href="mailto:shems@thesolareffect.be">Email: shems@thesolareffect.be</a></li>
-							</ul>
+									</ul>
+
+									</div>
+								</section>
+
 						</div>
 					</section>
 
@@ -430,7 +499,7 @@ const slogan = "DON'T HATE, CREATE! • ";
 window.addEventListener("load", function(){
 
 					let repeats = 1;
-					for( ; document.getElementById("mantra").offsetHeight < document.body.scrollHeight ; ){
+					for( ; document.getElementById("mantra").offsetHeight+100 < document.body.scrollHeight ; ){
 
 						repeats+=1;
 						document.getElementById("mantra").textContent = slogan.repeat(repeats);
